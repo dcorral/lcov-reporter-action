@@ -22879,6 +22879,7 @@ function shouldBeIncluded(fileName, options) {
     if (!options.shouldFilterChangedFiles) {
         return true;
     }
+    console.log("Found file in report", fileName.replace(options.prefix, ""));
     return options.changedFiles.includes(fileName.replace(options.prefix, ""));
 }
 function toFolder(path) {
@@ -23127,6 +23128,7 @@ async function main$1() {
     }
     if (shouldFilterChangedFiles || dontPostIfNoChangedFilesInReport) {
         options.changedFiles = await getChangedFiles(githubClient, options, github_1);
+        console.log("changed files", options.changedFiles);
     }
     const lcov = await parse$2(raw);
     if (typeof lcov === 'undefined') {

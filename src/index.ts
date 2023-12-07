@@ -88,6 +88,7 @@ async function main() {
 
 	if (shouldFilterChangedFiles || dontPostIfNoChangedFilesInReport) {
 		options.changedFiles = await getChangedFiles(githubClient, options as IOptions, context)
+		console.log("changed files", options.changedFiles);
 	}
 
 	const lcov = await parse(raw)

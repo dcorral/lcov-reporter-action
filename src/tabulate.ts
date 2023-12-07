@@ -51,6 +51,7 @@ function shouldBeIncluded(fileName: string, options: IOptions) {
 	if (!options.shouldFilterChangedFiles) {
 		return true
 	}
+	console.log("Found file in report", fileName.replace(options.prefix, "");
 	return options.changedFiles.includes(fileName.replace(options.prefix, ""))
 }
 
