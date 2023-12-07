@@ -65,6 +65,8 @@ async function main() {
 		prefix: normalisePath(`${process.env.GITHUB_WORKSPACE}/`),
 		workingDir,
 	}
+	console.log("workspace", process.env.GITHUB_WORKSPACE)
+	console.log("prefix", options.prefix);
 
 	if (context.eventName === "pull_request") {
 		options.commit = context.payload.pull_request!.head.sha
